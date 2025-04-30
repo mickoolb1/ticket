@@ -10,12 +10,16 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     strictPort: true,
     cors: true,
-    allowedHosts: ['.replit.dev', 'localhost', '127.0.0.1']
+    allowedHosts: [
+      '.replit.dev', 
+      'localhost', 
+      '127.0.0.1', 
+      'magic-hf1s.onrender.com'  // Aquí agregamos el host
+    ]
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
